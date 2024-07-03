@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flights Booking</title>
+	
+</head>
+<body>
+
+  <style>
+    
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://img.freepik.com/free-photo/airplane-wing-clouds_209303-53.jpg");
+}
+
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: relative;
+    left: 850px;
+}
+
+
+h2 {
+  color: #333;
+}
+
+
+h3 {
+  color: #555;
+}
+
+
+/* input[type="text"], input[type="date"], input[type="submit"] {
+    width: 1px;
+    padding: 2px;
+    margin: 1px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    box-sizing: border-box;
+} */
+
+
+img {
+    margin: 8px;
+    border-radius: 8px;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+    input[type="text"], input[type="date"], input[type="submit"] {
+        width: 200px;
+    }
+}
+#container{
+  width: 100%;
+  height: 250px;
+  border: none;
+  display: grid;
+  grid-template-columns: 225px 225px 225px 225px 225px;
+  grid-template-rows: 250px;
+  column-gap: 25px;
+}
+.box{
+  border: 1px solid darkgray;
+  border-radius: 20px;
+  text-align: center;
+}
+#class{
+  width: 200px;
+  height: 200px;
+  border: none;
+  display: grid;
+  grid-template-columns: 225px 225px 225px 225px 225px;
+  grid-template-rows: 250px;
+  column-gap: 25px;
+}
+
+.footer{
+  border: none;
+  text-align: center;
+}
+
+.run{
+  display: none;
+
+}
+
+
+ </style>
+  <span style="font-size: 25px; position: relative; left: 500px;"><b>Flights Booking</b></span>
+
+<button><a href="./register page.html">Register</a></button>
+<button><a href="./sign in page.html">Sign Up</a></button>
+
+	<h2>Booking.com</h2>
+
+	<!-- <h3>Compare and book flights with ease</h3>
+	<h3>Discover your next dream destination</h3> -->
+
+  
+	<input type="radio"><a href="#Round Trip">Round Trip</a>
+  <input type="radio"><a href="#One way">One way</a>
+  <input type="radio"><a href="#Multy-City Econamy">Multy-City Econamy</a>
+  <input type="radio"><a href="#Direct Flights Only">Direct Flights Only</a> 
+  
+     
+	
+<body>
+   <h2><b>Flight Search</b></h2>
+   <form action="search_results.html" method="get">
+  <label for="from"></label>
+  <input type="text" id="from" name="from" placeholder="Where from?" required>
+
+  <label for="to"></label>
+  <input type="text" id="to" name="to" placeholder="Where to?" required>
+
+  <label for="depart">from date:</label>
+  <input type="date" id="depart" name="depart" required>
+
+  <label for="return">Return date:</label>
+  <input type="date" id="return" name="return">
+  <input type="submit" value="Search" class="search">
+    </form>
+ 
+  <!-- <a href="./1.html">searching page</a>  -->
+<!-- 
+  <h3>Find your next destination</h3> -->
+
+  <h2><b>Pick a vibe and explore the top destinations from Hyderabad</b></h2>
+
+ <img src="https://static.toiimg.com/thumb/msid-89044864,width-748,height-499,resizemode=4,imgsize-135808/.jpg" width="200px" height="200px" alt="">
+
+ <img src="https://www.airport-technology.com/wp-content/uploads/sites/14/2022/01/shutterstock_758602234-min-scaled-e1641297696653.jpg" width="200px" height="200px" alt="">
+
+ <img src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2021/04/GettyImages-172672886-1440x864.jpg" width="200px" height="200px" alt="">
+
+ <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1pKPwprTJ41tXgkHgHFvOAU7fqVAgzZ0a9aEWwk05Aw&s" width="200px" height="200px" alt="">
+
+ <img src="https://media.cnn.com/api/v1/images/stellar/prod/240412213923-01-busiest-airports-2023-gallery.jpg?c=original&q=h_447,c_fill" width="200px" height="200px" alt="">
+ <!-- <img src="https://c.ndtvimg.com/2022-12/h0upg38_airport_625x300_02_December_22.jpg" width="200px" height="200px"  alt=""> -->
+
+ <!-- <h3>Popular flights near you</h3>
+
+ <h3>Find deals on domestic and international flights</h3> -->
+
+ <h2><b>International</b></h2>
+
+ <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-71822,resizemode-75,msid-103865626/magazines/panache/world-tourism-day-from-domestic-to-international-destinations-the-indian-traveller-is-going-places.jpg" width="200px" height="200px"  alt="">
+
+ <img src="https://www.bankrate.com/2019/05/22123233/7-Tips-for-first-time-international-travellers.jpg?auto=webp&optimize=high&crop=16:9" width="200px" height="200px" alt="">
+
+ <img src="https://images.livemint.com/rf/Image-920x613/LiveMint/Period2/2017/09/15/Photos/Processed/sumarinemuseum.jpg" width="200px" height="200px"  alt="">
+ <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlaG4E2JLEM8CAv2S-L2s7So5jlUi3cByXa3BGa9bcQQ&s" width="200px" height="200px"  alt="">
+ <!-- <img src="https://qph.cf2.quoracdn.net/main-qimg-5874962d9db5fe717212be1afa22683b-pjlq"  width="200px" height="200px" alt=""> -->
+ <img src="https://img.staticmb.com/mbcontent/images/crop/uploads/2023/8/mumbai-vs-hyderabad_0_1200.jpg" width="200px" height="200px"  alt="">
+ 
+ 
+ <h2><b>Trending Cities</b></h2>
+ <!-- <h3>Book flights to a destination popular with travellers from India</h3> -->
+ <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjOSHJaxtBsPG20J7tA5X6Svl4ii65oUjI1w&s" width="200px" height="200px">
+ <img src="https://www.forbesindia.com/media/images/2023/Nov/img_222033_lead_vigo_shutterstock_1140911444_bg.jpg" width="200px" height="200px">
+ <img src="https://smartcitiestech.io/wp-content/uploads/2021/12/img_Smart-Cities-Key-2022-Trends.jpg" width="200px" height="200px">
+ <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDtKU4piMO9W_pBzgHWMzTJ-5YTCufFS1aA&s" width="200px" height="200px">
+ <!-- <img sr="https://images.indianexpress.com/2024/05/shanghai-skyline-panoramic-at-sunset-royalty-free-image-1695134869-e1715157700502.jpg?w=414" width="200px" height="200px"> -->
+ <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8GyCgcx64PDp2sda9rPpoZ7bjpVqIwX9CNg&s" width="200px" height="200px">
+<br>
+<br>
+<br>
+<br>
+<br>
+ <div id="container">
+  <div class="box">
+    <h3>How do I find the cheapest flights on Booking.com?</h3>
+    <p>You can sort flights by price to see them from cheapest to most expensive. To find the cheapest flights, you also need to consider factors such as when you are booking and when you want to travel.</p>
+  </div>
+  <div class="box">
+    <h3>Can I book one way flight tickets on Booking.com?</h3>
+    <p>Yes, you can book one way, round trip and multi city flights on our site.</p>
+  </div>
+  <div class="box">
+    <h3>How far in advance can I book a flight?</h3>
+    <p>You can book a flight up to one year before your departure date.</p>
+  </div>
+  <div class="box">
+    <h3>Do flights get cheaper closer to departure?</h3>
+    <p>Generally, flight prices are more likely to increase the closer you get to your flight date.</p>
+  </div>
+  <div class="box">
+    <h3>What is a flexible ticket?</h3>
+    <p>A flexible ticket allows you to change your flight with the same airline by only paying the fare and tax difference. It can only be used for one confirmed change. You can add the flexible ticket when booking your flight.</p>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div id="class">
+  <div class="footer">
+ <h2><b>Support</b></h2>
+ <ol>
+  <li>Coronavirus (COVID-19) FAQs</li>
+   <li> Manage your trips</li>
+   <li> Customer Service help</li>
+   <li> Safety Resource Center</li>
+ </ol>
+ </div>
+ <div class="footer">
+ <h2><b>Discover</b></h2>
+ <ol>
+  <li>Genius loyalty program</li>
+  <li> Seasonal and holiday deals</li>
+  <li> Travel articles</li>
+  <li>Booking.com for Business</li>
+  <li> Traveller Review Awards</li>
+  <li> Car rental</li>
+  <li> Flight finder</li>
+  <li> Restaurant reservations</li>
+  <li> Booking.com for Travel Agents</li>
+ </ol>
+ </div>
+ <div class="footer">
+ <h2><b>Terms and settings</b></h2>
+ <ol>
+  <li>Privacy & cookies</li>
+  <li>Terms & conditions</li>
+  <li>MSA statement</li>
+</ol>
+</div>
+<div class="footer">
+
+<h2><b>Partners</b></h2>
+<ol>
+  <li>Extranet login</li>
+  <li>Partner help</li>
+   <li>List your property</li>
+    <li>Become an affiliate</li>
+</ol>
+</div>
+<div class="footer">
+<h2><b>About</b></h2>
+<ol>
+  <li>About Booking.com</li>
+  <li> How We Work</li>
+  <li> Sustainability</li>
+  <li>Press center</li>
+  <li> Careers</li>
+  <li> Investor relations</li>
+  <li> Corporate contact</li>
+</ol>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p><center>Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services.</center></p>
+<p><center>Copyright © 1996–2024 Booking.com™. All rights reserved.</center></p>
+<br>
+<br>
+<br>
+<div id="class">
+  <div class="run">
+<p><center>Booking.com</center></p>
+</div>
+<div class="run">
+  <p><center>Price Line</center></p>
+  </div>
+  <div class="run">
+    <p><center>KAYAK</center></p>
+    </div>
+    <div class="run">
+      <p><center>agoda</center></p>
+      </div>
+      <div class="run">
+        <p><center>Open Table</center></p>
+        </div>
+        </div>
+
+
+ <script>
+
+const url = 'https://booking-com15.p.rapidapi.com/api/v1/flights/searchDestination?query=new';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '57db39bb90mshaccd3d7d5cd2a43p183e74jsn0053dcb24fb3',
+		'x-rapidapi-host': 'booking-com15.p.rapidapi.com'
+	}
+};
+
+try {
+    async function flights(){
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+  window.location.assign("./1.html")
+
+    }
+    let search=document.querySelector(".search")
+    search.addEventListener("click",()=>{
+        flights()
+        
+    })
+} catch (error) {
+	console.error(error);
+}
+  
+
+	
+ </script>
+</body>
+</html>

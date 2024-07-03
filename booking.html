@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to search for flights
+function searchFlights(departureCity, destinationCity, departureDate, returnDate) {
+    // Construct the API endpoint URL with the necessary parameters
+    const apiKey = 'YOUR_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key
+    const apiUrl = `https://api.flightbooking.com/flights?departure=${departureCity}&destination=${destinationCity}&departure_date=${departureDate}&return_date=${returnDate}&api_key=${apiKey}`;
+
+    // Make an AJAX request to the API
+    fetch(apiUrl)
+        .then(response => {
+            // Check if the response is successful (status code 200)
+            if (!response.ok) {
+                throw new Error('Failed to fetch flights');
+            }
+            return response.json(); // Parse the JSON response
+        })
+        .then(data => {
+            // Process the response data (list of flights)
+            displayFlights(data);
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error searching for flights:', error);
+        });
+}
+
+// Function to display flights to the user
+function displayFlights(flights) {
+    // Iterate over the list of flights and display flight details
+    flights.forEach(flight => {
+        console.log('Flight details:', flight);
+        // You can customize this to display the flight details in your application UI
+    });
+}
+
+// Example usage:
+const departureCity = 'New York';
+const destinationCity = 'Los Angeles';
+const departureDate = '2024-06-15';
+const returnDate = '2024-06-20';
+
+// Call the searchFlights function with the provided parameters
+searchFlights(departureCity, destinationCity, departureDate, returnDate);
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		h2 {
+			text-align: center;
+			color: #333;
+		}
+
+		h3 {
+			color: #555;
+		}
+
+		.btn {
+			display: inline-block;
+			background-color: #007bff;
+			color: #fff;
+			padding: 10px 20px;
+			text-decoration: none;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.btn:hover {
+			background-color: #0056b3;
+		}
+
+		.radio-container {
+			margin: 20px 0;
+		}
+
+		.radio-container input[type="radio"] {
+			display: none;
+		}
+
+		.radio-container input[type="radio"] + a {
+			display: inline-block;
+			padding: 10px;
+			background-color: #f0f0f0;
+			border-radius: 5px;
+			color: #333;
+			text-decoration: none;
+			margin-right: 10px;
+			transition: background-color 0.3s ease;
+		}
+
+		.radio-container input[type="radio"]:checked + a {
+			background-color: #007bff;
+			color: #fff;
+		}
+
+		form {
+			margin-top: 20px;
+			text-align: center;
+		}
+
+		form input[type="text"],
+		form input[type="date"] {
+			padding: 10px;
+			margin: 5px;
+			width: 200px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+
+		form input[type="submit"] {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		form input[type="submit"]:hover {
+			background-color: #0056b3;
+		}
+
+		.destination-images {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin-top: 20px;
+		}
+
+		.destination-images img {
+			margin: 10px;
+			border-radius: 5px;
+		}
+
+		.popular-flights {
+			margin-top: 20px;
+		}
+
+		.popular-flights img {
+			margin: 10px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<h2>Booking.com</h2>
+	<h3>Compare and book flights with ease</h3>
+	<h3>Discover your next dream destination</h3>
+	
+	<div class="radio-container">
+		<input type="radio" id="roundTrip" name="flightType" checked>
+		<a href="#Round Trip">Round Trip</a>
+
+		<input type="radio" id="oneWay" name="flightType">
+		<a href="#One way">One way</a>
+
+		<input type="radio" id="multiCity" name="flightType">
+		<a href="#Multy-City Econamy">Multi-City Economy</a>
+
+		<input type="radio" id="directFlights" name="flightType">
+		<a href="#Direct Flights Only">Direct Flights Only</a>
+	</div>
+
+	<h3>Flight Search</h3>
+	<form action="search_results.html" method="get">
+		<label for="from">From:</label>
+		<input type="text" id="from" name="from" placeholder="Where from?" required>
+
+		<label for="to">To:</label>
+		<input type="text" id="to" name="to" placeholder="Where to?" required>
+
+		<label for="depart">Departure Date:</label>
+		<input type="date" id="depart" name="depart" required>
+
+		<label for="return">Return Date:</label>
+		<input type="date" id="return" name="return">
+
+		<input type="submit" value="Search" class="btn">
+	</form>
+
+	<h3>Find your next destination</h3>
+	<h3>Pick a vibe and explore the top destinations from Hyderabad</h3>
+
+	<div class="destination-images">
+		<img src="https://static.toiimg.com/thumb/msid-89044864,width-748,height-499,resizemode=4,imgsize-135808/.jpg" width="200px" height="200px" alt="">
+		<img src="https://www.airport-technology.com/wp-content/uploads/sites/14/2022/01/shutterstock_758602234-min-scaled-e1641297696653.jpg" width="200px" height="200px" alt="">
+		<img src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2021/04/GettyImages-172672886-1440x864.jpg" width="200px" height="200px" alt="">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1pKPwprTJ41tXgkHgHFvOAU7fqVAgzZ0a9aEWwk05Aw&s" width="200px" height="200px" alt="">
+		<img src="https://media.cnn.com/api/v1/images/stellar/prod/240412213923-01-busiest-airports-2023-gallery.jpg?c=original&q=h_447,c_fill" width="200px" height="200px" alt="">
+		<img src="https://c.ndtvimg.com/2022-12/h0upg38_airport_625x300_02_December_22.jpg" width="200px" height="200px" alt="">
+	</div>
+
+	<div class="popular-flights">
+		<h3>Popular flights near you</h3>
+
+		<h3>Find deals on domestic and international flights</h3>
+
+		<h2>International</h2>
+
+		<img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-71822,resizemode-75,msid-103865626/magazines/panache/world-tourism-day-from-domestic-to-international-destinations-the-indian-traveller-is-going-places.jpg" width="200px

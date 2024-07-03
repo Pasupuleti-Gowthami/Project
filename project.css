@@ -1,0 +1,58 @@
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Buttons */
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* Header */
+h2 {
+    color: #333;
+}
+
+/* Sub-headings */
+h3 {
+    color: #555;
+}
+
+/* Inputs */
+input[type="text"], input[type="date"], input[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Images */
+img {
+    margin: 10px;
+    border-radius: 8px;
+}
+
+/* Responsive layout */
+@media only screen and (min-width: 768px) {
+    /* Adjustments for larger screens */
+    body {
+        padding: 20px;
+    }
+    input[type="text"], input[type="date"], input[type="submit"] {
+        width: 48%;
+    }
+}
