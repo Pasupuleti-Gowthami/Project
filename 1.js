@@ -295,11 +295,11 @@ var flights = [
   
           var img;
           if (o.carrier == 'KL')
-          img = 'https://dl.dropbox.com/s/02ve5kn75rpo0s3/KL.png';else
+          img = '';else
           if (o.carrier == 'BA')
-          img = 'https://dl.dropbox.com/s/6fpuy898zzuk7nn/BA.png';else
+          img = '';else
   
-          img = 'https://dl.dropbox.com/s/dhmufay65yer2jz/AF.png';
+          img = '';
   
           return `<article data-index="${i}">
             <div class="img">
