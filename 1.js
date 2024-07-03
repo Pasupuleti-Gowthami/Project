@@ -45,82 +45,80 @@ var flights = [
     var airports = [{ "name": "Vichy-Charmeil Airport", "city": "Vichy", "country": "France", "IATA": "VHY" }, {"name":"Hyderabad-International Airport","city":"Hyderabad","countrt":"India","IATA": "Hyd"},{"name":"chatrapati shivaji-International Airport","city":"Mumbai","countrt":"India","IATA": "Mum"},{ "name": "Lyon-Bron Airport", "city": "Lyon", "country": "France", "IATA": "LYN" }, { "name": "Cannes-Mandelieu Airport", "city": "Cannes", "country": "France", "IATA": "CEQ" }, { "name": "Marseille Provence Airport", "city": "Marseille", "country": "France", "IATA": "MRS" }, { "name": "Charles de Gaulle International", "city": "Paris", "country": "France", "IATA": "CDG" }, { "name": "Toussus-le-Noble Airport", "city": "Toussous-le-noble", "country": "France", "IATA": "TNF" }, { "name": "Paris-Orly Airport", "city": "Paris", "country": "France", "IATA": "ORY" }, { "name": "Le Mans-Arnage Airport", "city": "Le Mans", "country": "France", "IATA": "LME" }, { "name": "Nantes Atlantique Airport", "city": "Nantes", "country": "France", "IATA": "NTE" }, { "name": "Nancy-Essey Airport", "city": "Nancy", "country": "France", "IATA": "ENC" }, { "name": "Frankfurt am Main International", "city": "Frankfurt", "country": "Germany", "IATA": "FRA" }, { "name": "Hamburg Airport", "city": "Hamburg", "country": "Germany", "IATA": "HAM" }, { "name": "Cologne Bonn Airport", "city": "Cologne", "country": "Germany", "IATA": "CGN" }, { "name": "Munich International Airport", "city": "Munich", "country": "Germany", "IATA": "MUC" }, { "name": "Stuttgart Airport", "city": "Stuttgart", "country": "Germany", "IATA": "STR" }, { "name": "Berlin-Tegel International Airport", "city": "Berlin", "country": "Germany", "IATA": "TXL" }, { "name": "Hannover Airport", "city": "Hannover", "country": "Germany", "IATA": "HAJ" }, { "name": "Bremen Airport", "city": "Bremen", "country": "Germany", "IATA": "BRE" }, { "name": "Frankfurt-Hahn Airport", "city": "Hahn", "country": "Germany", "IATA": "HHN" }, { "name": "Dortmund Airport", "city": "Dortmund", "country": "Germany", "IATA": "DTM" }, { "name": "Cork Airport", "city": "Cork", "country": "Ireland", "IATA": "ORK" }, { "name": "Galway Airport", "city": "Galway", "country": "Ireland", "IATA": "GWY" }, { "name": "Dublin Airport", "city": "Dublin", "country": "Ireland", "IATA": "DUB" }, { "name": "Waterford Airport", "city": "Waterford", "country": "Ireland", "IATA": "WAT" }, { "name": "Amsterdam Airport Schiphol", "city": "Amsterdam", "country": "Netherlands", "IATA": "AMS" }, { "name": "Maastricht Aachen Airport", "city": "Maastricht", "country": "Netherlands", "IATA": "MST" }, { "name": "Eindhoven Airport", "city": "Eindhoven", "country": "Netherlands", "IATA": "EIN" }, { "name": "Rotterdam The Hague Airport", "city": "Rotterdam", "country": "Netherlands", "IATA": "RTM" }, { "name": "Belfast International Airport", "city": "Belfast", "country": "United Kingdom", "IATA": "BFS" }, { "name": "Manchester Airport", "city": "Manchester", "country": "United Kingdom", "IATA": "MAN" }, { "name": "Southampton Airport", "city": "Southampton", "country": "United Kingdom", "IATA": "SOU" }, { "name": "London Heathrow Airport", "city": "London", "country": "United Kingdom", "IATA": "LHR" }, { "name": "Blackpool International Airport", "city": "Blackpool", "country": "United Kingdom", "IATA": "BLK" }, { "name": "Newcastle Airport", "city": "Newcastle", "country": "United Kingdom", "IATA": "NCL" }, { "name": "London Stansted Airport", "city": "London", "country": "United Kingdom", "IATA": "STN" }, { "name": "Miami International Airport", "city": "Miami", "country": "United States", "IATA": "MIA" }, { "name": "John F Kennedy International Airport", "city": "New York", "country": "United States", "IATA": "JFK" }, { "name": "Piedmont Triad International Airport", "city": "Greensboro", "country": "United States", "IATA": "GSO" }, { "name": "Wings Field", "city": "Philadelphia", "country": "United States", "IATA": "BBX" }, { "name": "Hardwick Field", "city": "Cleveland", "country": "United States", "IATA": "HDI" }, { "name": "Warren Field", "city": "Washington", "country": "United States", "IATA": "OCW" }];
   
     (function () {
-  
+
       var _airports = _.groupBy(airports, o => o.country),
-      selectIndex = [],
-      selectData = [];
-  
+        selectIndex = [],
+        selectData = [];
+    
       _.each(_airports, (countryList, countryName) => {
-        var firstLeter = countryName.split('')[0];
-        selectData.push(`<li class="sep" data-index="${firstLeter}">${countryName}</li>`);
-        selectIndex.push(`<li>${firstLeter}</li>`);
-  
+        var firstLetter = countryName.split('')[0];
+        selectData.push(<li class="sep" data-index="${firstLetter}">${countryName}</li>);
+        selectIndex.push(<li>${firstLetter}</li>);
+    
         _.each(countryList, (airport, i) => {
           selectData.push(`<li data-iata="${airport.IATA}" data-city="${airport.city}">
             ${airport.IATA}, ${airport.name}</li>`);
         });
       });
-  
+    
       $('.select ul.select-index').html(_.uniq(selectIndex).join(''));
       $('.select ul.select-data').html(selectData.join(''));
-  
-  
-      
+    
+      // Check if the select data is populated correctly
+      console.log('Select Data:', selectData);
+    
       var days = [30];
-      for (var i = 0; i < 31; i++) {days.push(i);}
-  
+      for (var i = 0; i < 31; i++) { days.push(i); }
+    
       var daysRender = _.map(days, function (i) {
-        return `<span>${i + 1}</span>`;
+        return <span>${i + 1}</span>;
       });
-  
+    
       $('.calendar .days').html(daysRender.join(''));
       $('.calendar .days span').eq(8).addClass('checked');
-  
-      
+    
       doFlightsRender(true);
-  
-  
-      
+    
       $('.control:not(.open) .control-head').on('click', function (evt) {
         $(evt.currentTarget).parent('.control').addClass('open');
       });
-  
+    
       $('.control .close').on('click', function (evt) {
         var z = $(evt.currentTarget).closest('.control');
-        setTimeout(() => {z.removeClass('open');}, 50);
+        setTimeout(() => { z.removeClass('open'); }, 50);
       });
-  
     
       $('.spinner button').on('click', function (evt) {
         var isAdding = evt.currentTarget.getAttribute('data-action') == 'plus',
-        $input = $('input[name="passengers"]:checked'),
-        $control = $input.siblings('div').find('span'),
-        value = parseInt($control.text());
-  
+          $input = $('input[name="passengers"]:checked'),
+          $control = $input.siblings('div').find('span'),
+          value = parseInt($control.text());
+    
         if (isAdding)
-        value++;else
-        if (value !== 0)
-        value--;
-  
+          value++;
+        else
+          if (value !== 0)
+            value--;
+    
         $control.text(value);
       });
-  
-      
+    
       $('.select-index').on('click', 'li', function (evt) {
         var index = evt.currentTarget.textContent,
-        $nano = $(evt.currentTarget).parent('.select-index').siblings('.nano'),
-        el = $nano.find(`li.sep[data-index="${index}"]`)[0];
-  
+          $nano = $(evt.currentTarget).parent('.select-index').siblings('.nano'),
+          el = $nano.find(li.sep[data-index="${index}"])[0];
+    
         $nano.find('.nano-content').animate({ scrollTop: el.offsetTop }, 600);
       });
-  
-      
+    
       $('.select-data').on('click', 'li:not(.sep)', function (evt) {
         var text = evt.currentTarget.textContent,
-        iata = evt.currentTarget.getAttribute('data-iata'),
-        $select = $(evt.currentTarget).closest('.select'),
-        $nameContainer = $select.find('.airport-name');
-  
+          iata = evt.currentTarget.getAttribute('data-iata'),
+          $select = $(evt.currentTarget).closest('.select'),
+          $nameContainer = $select.find('.airport-name');
+    
+        console.log('Selected IATA:', iata);  // Debug statement
+    
         if ($nameContainer.data('role') == 'from') {
           var _iata = iata.split('');
           var div = $('.header .fromPlace').addClass('rotate');
@@ -129,9 +127,8 @@ var flights = [
           span.eq(1).text(_iata[1]);
           span.eq(2).text(_iata[2]);
           setTimeout(() => div.removeClass('rotate'), 900);
-          
-        } else
-        {
+    
+        } else {
           var _iata = iata.split('');
           var div = $('.header .toPlace').addClass('rotate');
           var span = $('.header .toPlace span');
@@ -139,92 +136,88 @@ var flights = [
           span.eq(1).text(_iata[1]);
           span.eq(2).text(_iata[2]);
           setTimeout(() => div.removeClass('rotate'), 900);
-          
+    
         }
-  
+    
         $nameContainer.text(text);
         $select.toggleClass('open');
-  
+    
         $(evt.currentTarget).addClass('selected').siblings('li').removeClass('selected');
       });
-  
     
       $('.calendar .days span').on('click', function (evt) {
         var $this = $(evt.currentTarget),
-        day = evt.currentTarget.textContent;
-  
+          day = evt.currentTarget.textContent;
+    
         $this.addClass('checked').siblings('span').removeClass('checked');
-  
-        var date = new Date(`5/${day}/2017`);
+    
+        var date = new Date(5/${day}/2017);
         var [wd, m, d] = date.toDateString().split(' ');
-        $('.dateinput .control-item span').eq(0).text(`${wd.toUpperCase()}, ${d} ${m}`);
+        $('.dateinput .control-item span').eq(0).text(${wd.toUpperCase()}, ${d} ${m});
       });
-  
-  
+    
       $('.btnBack').on('click', function (evt) {
         var wrap = document.querySelector('.wrap'),
-        index = parseInt(wrap.getAttribute('data-pos'));
-  
+          index = parseInt(wrap.getAttribute('data-pos'));
+    
         $('.ticket button.btnBook').text('Book Flight');
         wrap.setAttribute('data-pos', index - 1);
       });
-  
-      
+    
       $('.btnSearch').on('click', function (evt) {
         doFlightsRender(false);
         setTimeout(() => {
           document.querySelector('.wrap').setAttribute('data-pos', 1);
         }, 50);
       });
-  
+    
       $('.ticket button').on('click', function (evt) {
         var $button = $(evt.currentTarget);
         var $loader = $('.loader').show();
         $button.text('Booking...');
-  
+    
         setTimeout(() => {
           $loader.hide();
           $button.html('<i class="zmdi zmdi-check-circle"></i> Flight Booked');
           $button.addClass('success');
         }, 1200);
       });
-  
-      
+    
       $('.list').on('click', 'article', function (evt) {
         var index = parseInt(evt.currentTarget.getAttribute('data-index')),
-        flight = flights[index];
-  
+          flight = flights[index];
+    
         var [from, t1, to, t2] = flight.nodes[0].split(' ');
-  
+    
         var p = $('.radio.passengers label span'),
-        peopleTotal = 0,
-        people = _.map(p, function (el, i) {
-          var v = parseInt(el.textContent),
-          str = '';
-  
-          if (i == 0 && v)
-          str = `${v} Adults`;
-          if (i == 1 && v)
-          str = `${v} Kids`;
-          if (i == 2 && v)
-          str = `${v} Elders`;
-  
-          peopleTotal += v;
-  
-          return str;
-        });
-  
+          peopleTotal = 0,
+          people = _.map(p, function (el, i) {
+            var v = parseInt(el.textContent),
+              str = '';
+    
+            if (i == 0 && v)
+              str = ${v} Adults;
+            if (i == 1 && v)
+              str = ${v} Kids;
+            if (i == 2 && v)
+              str = ${v} Elders;
+    
+            peopleTotal += v;
+    
+            return str;
+          });
+    
         from = $('.fromPlace span').text();
         to = $('.toPlace span').text();
-  
+    
         var time1 = new Date(t1),
-        time2 = new Date(t2);
-  
+          time2 = new Date(t2);
+    
         var clase = $('input[name="seat"]:checked').val(),
-        dates = $('.dateinput .control-item span'),
-        place1 = _.findWhere(airports, { IATA: from }),
-        place2 = _.findWhere(airports, { IATA: to });
-  
+          dates = $('.dateinput .control-item span'),
+          place1 = _.findWhere(airports, { IATA: from }),
+          place2 = _.findWhere(airports, { IATA: to });
+    
         var flightRender = `
           <div class="title">
             <div>
@@ -266,60 +259,54 @@ var flights = [
             <small>Total</small> <span>€${(flight.price * peopleTotal).toFixed(2)}</span>
           </div>
         `;
-  
+    
         $('.ticket section').html(flightRender);
         setTimeout(() => {
           document.querySelector('.wrap').setAttribute('data-pos', 2);
         }, 50);
       });
-  
-      $(".nano").nanoScroller();
-  
-  
-      function doFlightsRender(isInit) {
-        var flightsRender = _.map(flights, function (o, i) {
-          var sumText = "";
-          var [from, t1, to, t2] = o.nodes[0].split(' ');
-  
-          var d1 = new Date(t1),
-          d2 = new Date(t2);
-  
-          if (!isInit) {
-            var ppl = $('.radio.passengers label span'),
-            sum = parseInt(ppl.eq(0).text()) + parseInt(ppl.eq(1).text()) + parseInt(ppl.eq(2).text());
-  
-            sumText = `${sum} people €${(o.price * sum).toFixed(2)}`;
-            from = $('.fromPlace span').text();
-            to = $('.toPlace span').text();
-          }
-  
-          var img;
-          if (o.carrier == 'KL')
-          img = '';else
-          if (o.carrier == 'BA')
-          img = '';else
-  
-          img = '';
-  
-          return `<article data-index="${i}">
-            <div class="img">
-              <img src="${img}" alt="ualogo" />
-            </div>
-            <div class="info">
-              <span class="time">${o.time}</span>
-              <span class="airline">
-                ${d1.toLocaleTimeString().replace(':00', '')} -
-                ${d2.toLocaleTimeString().replace(':00', '')}
-              </span>
-              <span>${carrier[o.carrier]} ${from} - ${to}</span>
-              <span>Non-Stop</span>
-  
-              <h5><small>${sumText}</small> €${o.price}</h5>
-            </div>
-          </article>`;
+    
+      $('.header .fromPlace').on('click', function (evt) {
+        console.log('From place clicked');  // Debug statement
+        var $select = $('.select:first-of-type');
+        var fromVal = $select.find('.airport-name').data('role', 'from').text();
+        $select.toggleClass('open');
+        $('.select-data li:contains(' + fromVal + ')').addClass('selected').siblings().removeClass('selected');
+      });
+    
+      $('.header .toPlace').on('click', function (evt) {
+        console.log('To place clicked');  // Debug statement
+        var $select = $('.select:last-of-type');
+        var toVal = $select.find('.airport-name').data('role', 'to').text();
+        $select.toggleClass('open');
+        $('.select-data li:contains(' + toVal + ')').addClass('selected').siblings().removeClass('selected');
+      });
+    
+      function doFlightsRender(isFirstRender) {
+        var flightsRender = _.map(flights, function (flight, i) {
+          var [from, t1, to, t2] = flight.nodes[0].split(' ');
+          var time1 = new Date(t1),
+            time2 = new Date(t2);
+    
+          return `
+            <article data-index="${i}">
+              <div>
+                <small>${time1.toLocaleTimeString().replace(':00', '')}</small>
+                <span>${from}</span>
+              </div>
+              <span class="separator"><i class="zmdi zmdi-airplane"></i></span>
+              <div>
+                <small>${time2.toLocaleTimeString().replace(':00', '')}</small>
+                <span>${to}</span>
+              </div>
+            </article>
+          `;
         });
-  
-        $('.list .nano-content').html(flightsRender.join(''));
+    
+        $('.list').html(flightsRender.join(''));
+    
+        if (isFirstRender)
+          $('.wrap').removeClass('loading');
       }
-  
+    
     })();
